@@ -1,4 +1,4 @@
-
+log
 console.log("a"+10);
 console.log(true+"hi");
 console.log(true+true);
