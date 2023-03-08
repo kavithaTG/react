@@ -1,11 +1,9 @@
 import React from 'react';
-const Nav= () => {
-    
-           return(
-            <nav>
-                <i>wel come hii</i>
-            </nav>
-           )
-    
+const Nav=(props)=>{
+    return(
+        <>
+        <img src={props.data} alt="" />
+        </>
+    )
 }
-export default Nav;
+export default Nav
