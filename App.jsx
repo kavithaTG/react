@@ -1,72 +1,34 @@
 import React from 'react'
 
-import {Component} from 'react'
+// import {Component} from 'react'
 import "./Color.css"
-class App extends Component{
-  constructor(){
-    super()
-    this.state={count:0}
+
+const App=()=>{
+  let [count,setCount]=React.useState(0)
   
-  }
-     handleIncrement=()=>{
-    this.setState({count:this.state.count+1})
+  
+     let handleIncrement=()=>{
+        setCount(count+1)
+
+   }
+    let handleDecrement=()=>{
+    setCount(count>0?count-1:count=0)
+   }
+  let handleReset=()=>{
+    setCount(0)
 
   }
-  handleDecrement=()=>{
-    this.setState(
-      {count:this.state.count>0?this.state.count-1:this.state.count=0}
-    )
-
-  }
-  handleReset=()=>{
-    this.setState({count:this.state.count=0})
-
-  }
-  
-  
-  render(){
-  
-   return(
+  return(
     <>
-    <div className='mainblock'>
-      <h1 className='headblock'>{this.state.count}</h1>
-      <div className='btmblock'>
-      <button onClick={this.handleIncrement}>+</button>
-      <button onClick={this.handleDecrement}>-</button>
-      <button onClick={this.handleReset}>Reset</button>
-      </div>
-      </div>
-    
+    <h1>{count}</h1>
+       <button onClick={handleIncrement}>+</button>
+       <button onClick={handleDecrement}>-</button>
+       <button onClick={handleReset}>Reset</button>
+  
     </>
-   )
-  }
+  )
 }
 export default App
-// const App=()=>{
-//   let [count,setCount]=React.useState(0)
-  
-  
-//      let handleIncrement=()=>{
-//         setCount(count+1)
-
-//    }
-//     let handleDecrement=()=>{
-//     setCount(count>0?count-1:count=0)
-//    }
-//   let handleReset=()=>{
-//     setCount(0)
-
-//   }
-//   return(
-//     <>
-//     <h1>{count}</h1>
-//        <button onClick={handleIncrement}>+</button>
-//        <button onClick={handleDecrement}>-</button>
-//        <button onClick={handleReset}>Reset</button>
-  
-//     </>
-//   )
-// }
 // const App=()=>{
 //   let handle=()=>{
 //     toast.success("logged in sucessfull",{position:toast.position.center})
