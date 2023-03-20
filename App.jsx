@@ -1,59 +1,137 @@
 import React from 'react'
-// import "./Color.css"
-// import json from "./Matri.json"
-import {Component} from 'react'
-// import Matrimoni from './Matrimoni'
-// import Nav from "./Nav"
-import "./Color.css"
 
+import {Component} from 'react'
+import "./Color.css"
 class App extends Component{
   constructor(){
     super()
-    this.state={
-      count:0
-    }
+    this.state={count:0}
+  
   }
-    handleIncrement= ()=>{
-      
-      this.setState({count:this.state.count+1})
-    }
-    handleDecrement= ()=>{
-      this.setState({count:this.state.count-1})
-      
+     handleIncrement=()=>{
+    this.setState({count:this.state.count+1})
 
-        }
-      
-    
-    handleReset= ()=>{
-      this.setState({count:this.state.count=0})
-    }
+  }
+  handleDecrement=()=>{
+    this.setState(
+      {count:this.state.count>0?this.state.count-1:this.state.count=0}
+    )
+
+  }
+  handleReset=()=>{
+    this.setState({count:this.state.count=0})
+
+  }
   
-
-  render()
-  {
-  return(
+  
+  render(){
+  
+   return(
     <>
-    <center>
-    <div className="cal">
-      <div>
-      <h1>{this.state.count}</h1>
+    <div className='mainblock'>
+      <h1 className='headblock'>{this.state.count}</h1>
+      <div className='btmblock'>
+      <button onClick={this.handleIncrement}>+</button>
+      <button onClick={this.handleDecrement}>-</button>
+      <button onClick={this.handleReset}>Reset</button>
       </div>
-  
-    <button onClick={this.handleIncrement}>+</button>
-    <button onClick={this.handleDecrement}>-</button>
-  <button className='btn' onClick={this.handleReset}>Reset</button>
-  </div>
-  </center>
+      </div>
     
-  
-    
-    
-    {/* <Nav />
-      </div><Matrimoni data={this.state.json}/> */}
     </>
-  )
+   )
   }
 }
+export default App
+// const App=()=>{
+//   let [count,setCount]=React.useState(0)
+  
+  
+//      let handleIncrement=()=>{
+//         setCount(count+1)
 
+//    }
+//     let handleDecrement=()=>{
+//     setCount(count>0?count-1:count=0)
+//    }
+//   let handleReset=()=>{
+//     setCount(0)
 
- export default App;
+//   }
+//   return(
+//     <>
+//     <h1>{count}</h1>
+//        <button onClick={handleIncrement}>+</button>
+//        <button onClick={handleDecrement}>-</button>
+//        <button onClick={handleReset}>Reset</button>
+  
+//     </>
+//   )
+// }
+// const App=()=>{
+//   let handle=()=>{
+//     toast.success("logged in sucessfull",{position:toast.position.center})
+//   }
+//   return(
+//     <>
+//     <toastContainer/>
+//     <button onClick={handle}>click</button>
+
+//     </>
+//   )
+// }
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state={name:"kavitha"}
+//   }
+//   componentDidMount()
+//   {
+//     let btn=document.querySelector("button")
+//     btn.addEventListener("click",()=>{
+//        this.setState({name:this.state.name="gagana"})
+//     })
+//   }
+//   render(){
+//     return(
+//     <>
+//     <h1>{this.state.name}</h1>
+//     <button>click</button>
+//     </>
+//     )
+//   }
+// }
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state={name:"kavitha"}
+//   }
+//   componentDidMount()
+//   {
+//     let btn=document.querySelector("button")
+//     btn.addEventListener("click",()=>{
+//        this.setState({name:this.state.name="gagana"})
+//     })
+//   }
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state={name:""}
+//   }
+//   componentDidMount()
+//   {
+//     let input=document.querySelector("input")
+//     input.addEventListener("keypress",(e)=>{
+//        this.setState({name:e.target.value})
+//     })
+//   }
+//   render(){
+//     return(
+//     <>
+//     <h1>{this.state.name}</h1>
+//      <input type="text" />
+//     </>
+//     )
+//   }
+// }
+
+//  export default App;
